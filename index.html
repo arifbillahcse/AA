@@ -189,7 +189,6 @@
         .cards-bg { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
         .quiz-bg { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
         .bucket-bg { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); }
-        .friends-bg { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
         .lovemeter-bg { background: linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%); }
         .open-when-bg { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
         .mystery-bg { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
@@ -825,47 +824,6 @@
             opacity: 0.6;
         }
 
-        /* ============ FRIENDS MESSAGES ============ */
-        .friends-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .friend-card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-height: 160px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .friend-card:hover { transform: translateY(-5px); }
-
-        .friend-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #ff6b9d;
-            margin-bottom: 10px;
-        }
-
-        .friend-message {
-            display: none;
-            color: #333;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        .friend-hint { color: #999; font-size: 0.9rem; }
-
-        .friend-card.opened .friend-message { display: block; }
-        .friend-card.opened .friend-hint { display: none; }
-
         /* ============ LOVE METER ============ */
         .lovemeter-container {
             max-width: 600px;
@@ -1296,35 +1254,6 @@
                 <div class="bucket-item" data-id="bucket-6" onclick="toggleBucket(this)">
                     <div class="bucket-checkbox">✓</div>
                     <div class="bucket-text">🎆 নতুন বছর একসাথে উদযাপন করা</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ FRIENDS MESSAGES SECTION ============ -->
-    <section class="section friends-bg">
-        <div class="section-inner">
-            <h2 class="section-title">👥 Messages From Loved Ones 👥</h2>
-            <div class="friends-container">
-                <div class="friend-card" onclick="this.classList.add('opened')">
-                    <div class="friend-name">💐 Best Friend</div>
-                    <div class="friend-hint">Click to reveal 👆</div>
-                    <div class="friend-message">"Happy Birthday Asma! তুমি একজন অসাধারণ মানুষ। তোমার জীবন আনন্দে ভরে উঠুক!"</div>
-                </div>
-                <div class="friend-card" onclick="this.classList.add('opened')">
-                    <div class="friend-name">👨‍👩‍👧 Family</div>
-                    <div class="friend-hint">Click to reveal 👆</div>
-                    <div class="friend-message">"আমাদের প্রিয় Asma, তোমাকে অনেক অনেক শুভকামনা। সবসময় হাসিখুশি থাকো!"</div>
-                </div>
-                <div class="friend-card" onclick="this.classList.add('opened')">
-                    <div class="friend-name">🌸 Sister</div>
-                    <div class="friend-hint">Click to reveal 👆</div>
-                    <div class="friend-message">"আমার প্রিয় বোন/বান্ধবী, জন্মদিনের শুভেচ্ছা! তুমি আমার অনুপ্রেরণা।"</div>
-                </div>
-                <div class="friend-card" onclick="this.classList.add('opened')">
-                    <div class="friend-name">🎉 Colleague</div>
-                    <div class="friend-hint">Click to reveal 👆</div>
-                    <div class="friend-message">"Happy Birthday! তোমার সাথে কাজ করা সবসময় আনন্দের। শুভ জন্মদিন!"</div>
                 </div>
             </div>
         </div>
