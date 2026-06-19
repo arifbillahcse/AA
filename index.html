@@ -105,37 +105,6 @@
             padding: 20px;
         }
 
-        .hero-video-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .hero-video-bg iframe {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100vw;
-            height: 100vh;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-
         .hero-content {
             position: relative;
             z-index: 2;
@@ -254,6 +223,37 @@
         .lovemeter-bg { background: linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%); }
         .open-when-bg { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
         .mystery-bg { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+
+        /* ============ VIDEO SECTION ============ */
+        .video-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
         /* ============ MYSTERY GIFT SECTION ============ */
         .mystery-container {
@@ -1335,17 +1335,6 @@
 
     <!-- ============ HERO SECTION ============ -->
     <section class="hero">
-        <!-- YouTube Background Video -->
-        <div class="hero-video-bg">
-            <iframe
-                src="https://www.youtube.com/embed/T224VHvjFOY?autoplay=1&mute=1&controls=0&loop=1&playlist=T224VHvjFOY&modestbranding=1"
-                title="Birthday Background Music"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>🎂 Happy Birthday Asma! ❤️</h1>
             <div class="countdown" id="countdown">Today is your special day! 🎉</div>
@@ -1378,6 +1367,20 @@
             </div>
         </div>
         <div class="scroll-indicator">👇 Scroll to explore 👇</div>
+    </section>
+
+    <!-- ============ VIDEO SECTION ============ -->
+    <section class="video-section">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/T224VHvjFOY?autoplay=1&mute=1&controls=0&loop=1&playlist=T224VHvjFOY&modestbranding=1"
+                    title="Happy Birthday Music"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
     </section>
 
     <!-- ============ PHOTOS SECTION ============ -->
