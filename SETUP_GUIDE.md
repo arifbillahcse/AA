@@ -5,6 +5,32 @@ This guide helps you set up email notifications and activity logging for Asma's 
 
 ---
 
+## ⚡ Quick Reference Card
+
+### EmailJS Credentials Location
+```
+Dashboard (https://dashboard.emailjs.com/)
+    ├─ Email Services → [Your Service] → Copy Service ID
+    └─ Account (Profile Icon) → API Keys → Copy Public Key
+```
+
+### What You Need
+```
+SERVICE ID:   service_abc123xyz...
+PUBLIC KEY:   1a2b3c4d5e6f7g8h...
+TEMPLATE ID:  template_asma_updates
+```
+
+### Google Form Entry IDs Location
+```
+Google Form (https://forms.google.com)
+    ├─ Right-click → Inspect (F12)
+    ├─ Search for: entry.
+    └─ Copy numbers: entry.1234567890
+```
+
+---
+
 ## 📧 EmailJS Setup (for Email Notifications)
 
 ### Step 1: Create EmailJS Account
@@ -44,9 +70,43 @@ This is an automated notification from the birthday website.
 5. Save template
 
 ### Step 4: Get Your Credentials
-1. Go to "Integration" (gear icon)
-2. Copy your **Service ID** (looks like: `service_xxxxxxxxxxxxxxx`)
-3. Copy your **Public Key** (looks like: `xxxxxxxxxxxxxxxxxxx`)
+
+#### Method 1: From Dashboard (Recommended)
+1. Go to https://dashboard.emailjs.com/
+2. Login with your EmailJS account
+3. Look at the left sidebar
+4. Click on **"Account"** or **"Settings"**
+5. You'll see:
+   - **Service ID** under "Email Services" section
+   - **Public Key** under "API Keys" section (top right corner)
+
+#### Method 2: From API Documentation
+1. Go to https://dashboard.emailjs.com/
+2. Click **"API Documentation"** tab
+3. In the code example, you'll see:
+   ```javascript
+   emailjs.init("YOUR_PUBLIC_KEY");
+   ```
+   - The key shown here is your **Public Key**
+
+#### Method 3: From Integration Page
+1. Go to https://dashboard.emailjs.com/
+2. Click **"Email Services"** 
+3. Click on your connected email service (Gmail/Outlook)
+4. The **Service ID** is shown in blue text
+5. Go to **"Admin"** → **"API Keys"** for **Public Key**
+
+#### Where to Find Them:
+| Credential | Location |
+|-----------|----------|
+| **Service ID** | Dashboard → Email Services → Copy the ID in blue |
+| **Public Key** | Dashboard → Account → API Keys (top right) OR Admin → API Keys |
+
+#### Example of What They Look Like:
+```
+Service ID:  service_abc123xyz789def
+Public Key:  1a2b3c4d5e6f7g8h9i0j
+```
 
 ### Step 5: Update Code
 Open `index.html` and find the `EMAIL_CONFIG` section (around line 1909):
@@ -221,12 +281,35 @@ The website automatically tracks:
 
 ## 🐛 Troubleshooting
 
+### Can't find Service ID or Public Key?
+1. **Make sure you're logged in** to https://dashboard.emailjs.com/
+2. **Service ID Location:**
+   - Go to "Email Services"
+   - Click on your email service (Gmail/Outlook/etc)
+   - Service ID is shown in blue text
+   - Example: `service_abc123xyz`
+
+3. **Public Key Location:**
+   - Click on your **profile icon** (top right)
+   - Select **"Account"** 
+   - Scroll down to **"API Keys"** section
+   - Or: Go to **Admin** → **API Keys**
+   - Example: `1a2b3c4d5e6f7g8h`
+
+4. **Still can't find it?**
+   - Try clearing browser cache
+   - Log out and log back in
+   - Try a different browser
+   - Check spam/promotions folder for EmailJS setup email
+
 ### EmailJS not sending emails?
-- Check Public Key is correct
-- Check Service ID is correct
-- Check Template ID is correct
-- Check email service is connected in EmailJS dashboard
-- Look at browser console for errors
+- Check Public Key is correct (no extra spaces)
+- Check Service ID is correct (no extra spaces)
+- Check Template ID is correct (`template_asma_updates`)
+- Check email service is **connected** in EmailJS dashboard (green checkmark)
+- Check Template **exists** (go to "Email Templates")
+- Look at browser console (F12) for errors
+- Wait 30 seconds after configuration before testing
 
 ### Google Sheets not receiving data?
 - Check Form URL is correct
