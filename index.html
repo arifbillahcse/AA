@@ -218,6 +218,7 @@
         .letter-bg { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
         .reasons-bg { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
         .cards-bg { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .aunty-gifts-bg { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
         .quiz-bg { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
         .bucket-bg { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); }
         .lovemeter-bg { background: linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%); }
@@ -1042,6 +1043,84 @@
             cursor: default;
         }
 
+        /* ============ AUNTY GIFTS ============ */
+        .aunty-gifts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .aunty-gift-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aunty-gift-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .aunty-gift-card.selected {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .gift-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .gift-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .aunty-gift-card.selected .gift-title {
+            color: white;
+        }
+
+        .gift-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .aunty-gift-card.selected .gift-description {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .gift-select-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .gift-select-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        .aunty-gift-card.selected .gift-select-btn {
+            background: white;
+            color: #f5576c;
+        }
+
         /* ============ QUIZ ============ */
         .quiz-container {
             max-width: 700px;
@@ -1322,6 +1401,11 @@
                 padding-right: 10px;
             }
             .timeline-item::after { left: 10px !important; right: auto !important; }
+            .aunty-gifts-container { grid-template-columns: 1fr; }
+            .aunty-gift-card { padding: 25px 15px; }
+            .gift-icon { font-size: 2.5rem; }
+            .gift-title { font-size: 1.1rem; }
+            .gift-description { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -1559,6 +1643,39 @@
         </div>
     </section>
 
+    <!-- ============ AUNTY GIFTS SECTION ============ -->
+    <section class="section aunty-gifts-bg">
+        <div class="section-inner">
+            <h2 class="section-title">💝 Gifts For Maa 💝</h2>
+            <p style="text-align: center; color: white; font-size: 1.1rem; margin-bottom: 40px; opacity: 0.95;">
+                মাকে ভালোবাসা দিয়ে কিছু বেছে নাও যা তাকে খুশি করবে
+            </p>
+            <div class="aunty-gifts-container">
+                <div class="aunty-gift-card" data-id="aunty-saree">
+                    <div class="gift-icon">🌸</div>
+                    <div class="gift-title">Beautiful Saree</div>
+                    <div class="gift-description">একটি সুন্দর এবং কমনীয় শাড়ি - যা তাকে আরও দীপ্তিমান করে তুলবে।</div>
+                    <button class="gift-select-btn" onclick="selectAuntyGift(this)">Select Gift 💝</button>
+                </div>
+                <div class="aunty-gift-card" data-id="aunty-skincare">
+                    <div class="gift-icon">✨</div>
+                    <div class="gift-title">Premium Skincare Set</div>
+                    <div class="gift-description">প্রিমিয়াম প্রসাধনী সেট - তার ত্বককে আরও সুন্দর এবং উজ্জ্বল করবে।</div>
+                    <button class="gift-select-btn" onclick="selectAuntyGift(this)">Select Gift 💝</button>
+                </div>
+                <div class="aunty-gift-card" data-id="aunty-experience">
+                    <div class="gift-icon">🎭</div>
+                    <div class="gift-title">Spa & Relaxation Day</div>
+                    <div class="gift-description">একটি সম্পূর্ণ স্পা দিন - যেখানে তিনি সম্পূর্ণ শান্তি এবং আরাম পাবেন।</div>
+                    <button class="gift-select-btn" onclick="selectAuntyGift(this)">Select Gift 💝</button>
+                </div>
+            </div>
+            <p style="text-align: center; color: white; font-size: 0.95rem; margin-top: 30px; opacity: 0.8;" id="auntyGiftStatus">
+                💝 নির্বাচিত উপহার: <span id="auntyGiftCount">0</span>
+            </p>
+        </div>
+    </section>
+
     <!-- ============ QUIZ SECTION ============ -->
     <section class="section quiz-bg">
         <div class="section-inner">
@@ -1792,6 +1909,7 @@
             calculateDaysTogether();
             calculateNextBirthday();
             loadRedeemedCards();
+            loadAuntyGifts();
             loadBucketList();
             updateVisitCount();
             animateLoveMeter();
@@ -1907,6 +2025,48 @@
         function updateRedeemCount() {
             const count = document.querySelectorAll('.redeem-card.redeemed').length;
             document.getElementById('redeemCount').textContent = count;
+        }
+
+        /* ============ AUNTY GIFTS ============ */
+        function selectAuntyGift(button) {
+            const card = button.closest('.aunty-gift-card');
+            const cardId = card.getAttribute('data-id');
+
+            if (card.classList.contains('selected')) {
+                card.classList.remove('selected');
+                button.textContent = 'Select Gift 💝';
+                localStorage.removeItem(`aunty_gift_${cardId}`);
+            } else {
+                document.querySelectorAll('.aunty-gift-card.selected').forEach(c => {
+                    c.classList.remove('selected');
+                    c.querySelector('.gift-select-btn').textContent = 'Select Gift 💝';
+                    const id = c.getAttribute('data-id');
+                    localStorage.removeItem(`aunty_gift_${id}`);
+                });
+                card.classList.add('selected');
+                button.textContent = 'Selected ✅';
+                localStorage.setItem(`aunty_gift_${cardId}`, 'selected');
+                createConfetti();
+                card.classList.add('heart-beat');
+                setTimeout(() => card.classList.remove('heart-beat'), 600);
+            }
+            updateAuntyGiftCount();
+        }
+
+        function loadAuntyGifts() {
+            document.querySelectorAll('.aunty-gift-card').forEach(card => {
+                const cardId = card.getAttribute('data-id');
+                if (localStorage.getItem(`aunty_gift_${cardId}`) === 'selected') {
+                    card.classList.add('selected');
+                    card.querySelector('.gift-select-btn').textContent = 'Selected ✅';
+                }
+            });
+            updateAuntyGiftCount();
+        }
+
+        function updateAuntyGiftCount() {
+            const count = document.querySelectorAll('.aunty-gift-card.selected').length;
+            document.getElementById('auntyGiftCount').textContent = count;
         }
 
         /* ============ 101 REASONS ============ */
