@@ -105,6 +105,37 @@
             padding: 20px;
         }
 
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-video-bg iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -1304,6 +1335,17 @@
 
     <!-- ============ HERO SECTION ============ -->
     <section class="hero">
+        <!-- YouTube Background Video -->
+        <div class="hero-video-bg">
+            <iframe
+                src="https://www.youtube.com/embed/T224VHvjFOY?autoplay=1&mute=1&controls=0&loop=1&playlist=T224VHvjFOY&modestbranding=1"
+                title="Birthday Background Music"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>🎂 Happy Birthday Asma! ❤️</h1>
             <div class="countdown" id="countdown">Today is your special day! 🎉</div>
