@@ -787,6 +787,14 @@
             animation: zoomIn 0.3s ease;
         }
 
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 15px;
+            animation: zoomIn 0.3s ease;
+            object-fit: contain;
+        }
+
         .lightbox-caption {
             color: white;
             font-size: 1.3rem;
@@ -1388,32 +1396,32 @@
         <div class="section-inner">
             <h2 class="section-title">💫 Our Memories 💫</h2>
             <div class="photo-gallery">
-                <div class="photo-card" onclick="openLightbox('🌧️', 'বৃষ্টিতে আমাদের খেলা - বৃষ্টি ভালোবাসি যখন তুমি পাশে')">
-                    <div class="photo-placeholder">🌧️</div>
+                <div class="photo-card" onclick="openLightbox('images/Bristi Bilash.JPG', 'বৃষ্টিতে আমাদের খেলা - বৃষ্টি ভালোবাসি যখন তুমি পাশে')">
+                    <img src="images/Bristi Bilash.JPG" alt="বৃষ্টিতে আমাদের খেলা">
                     <div class="photo-caption"><strong>বৃষ্টিতে আমাদের খেলা</strong><br>বৃষ্টি ভালোবাসি যখন তুমি পাশে</div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('🫖', 'চা বাগানের রোমান্স - সবুজ প্রকৃতি, তোমার হাত আমার হাতে')">
-                    <div class="photo-placeholder">🫖</div>
+                <div class="photo-card" onclick="openLightbox('images/cha bagan.HEIC', 'চা বাগানের রোমান্স - সবুজ প্রকৃতি, তোমার হাত আমার হাতে')">
+                    <img src="images/cha bagan.HEIC" alt="চা বাগানের রোমান্স">
                     <div class="photo-caption"><strong>চা বাগানের রোমান্স</strong><br>সবুজ প্রকৃতি, তোমার হাত আমার হাতে</div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('💕', 'আমাদের প্রথম ডেট - যেদিন সবকিছু শুরু হয়েছিল')">
-                    <div class="photo-placeholder">💕</div>
+                <div class="photo-card" onclick="openLightbox('images/Fist date.jpeg', 'আমাদের প্রথম ডেট - যেদিন সবকিছু শুরু হয়েছিল')">
+                    <img src="images/Fist date.jpeg" alt="আমাদের প্রথম ডেট">
                     <div class="photo-caption"><strong>আমাদের প্রথম ডেট</strong><br>যেদিন সবকিছু শুরু হয়েছিল</div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('⭐', 'রাতের হাওর - তারাদের মধ্যে আমরা, শুধু আমাদের ভালোবাসা')">
-                    <div class="photo-placeholder">⭐</div>
+                <div class="photo-card" onclick="openLightbox('images/haor.HEIC', 'রাতের হাওর - তারাদের মধ্যে আমরা, শুধু আমাদের ভালোবাসা')">
+                    <img src="images/haor.HEIC" alt="রাতের হাওর">
                     <div class="photo-caption"><strong>রাতের হাওর</strong><br>তারাদের মধ্যে আমরা, শুধু আমাদের ভালোবাসা</div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('⛰️', 'কালো পাহাড়ের অ্যাডভেঞ্চার - একসাথে প্রতিটি শিখর জয় করলাম')">
-                    <div class="photo-placeholder">⛰️</div>
+                <div class="photo-card" onclick="openLightbox('images/Kalo pahar adventure.JPG', 'কালো পাহাড়ের অ্যাডভেঞ্চার - একসাথে প্রতিটি শিখর জয় করলাম')">
+                    <img src="images/Kalo pahar adventure.JPG" alt="কালো পাহাড়ের অ্যাডভেঞ্চার">
                     <div class="photo-caption"><strong>কালো পাহাড়ের অ্যাডভেঞ্চার</strong><br>একসাথে প্রতিটি শিখর জয় করলাম</div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('🛏️', 'অলস দিন - পৃথিবীর সেরা মুহূর্ত - শুধু আমরা দুজন')">
-                    <div class="photo-placeholder">🛏️</div>
+                <div class="photo-card" onclick="openLightbox('images/lazy day.jpg', 'অলস দিন - পৃথিবীর সেরা মুহূর্ত - শুধু আমরা দুজন')">
+                    <img src="images/lazy day.jpg" alt="অলস দিন">
                     <div class="photo-caption"><strong>অলস দিন</strong><br>পৃথিবীর সেরা মুহূর্ত - শুধু আমরা দুজন</div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('🏔️', 'পাহাড়ের শিখর থেকে - আমাদের ভবিষ্যৎ দেখছি একসাথে')">
-                    <div class="photo-placeholder">🏔️</div>
+                <div class="photo-card" onclick="openLightbox('images/pahar.HEIC', 'পাহাড়ের শিখর থেকে - আমাদের ভবিষ্যৎ দেখছি একসাথে')">
+                    <img src="images/pahar.HEIC" alt="পাহাড়ের শিখর থেকে">
                     <div class="photo-caption"><strong>পাহাড়ের শিখর থেকে</strong><br>আমাদের ভবিষ্যৎ দেখছি একসাথে</div>
                 </div>
             </div>
@@ -1748,6 +1756,7 @@
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
         <div class="lightbox-emoji" id="lightboxEmoji">📸</div>
+        <img class="lightbox-image" id="lightboxImage" alt="Memory" style="display: none;">
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 
@@ -1969,8 +1978,19 @@
         }
 
         /* ============ LIGHTBOX ============ */
-        function openLightbox(emoji, caption) {
-            document.getElementById('lightboxEmoji').textContent = emoji;
+        function openLightbox(content, caption) {
+            const lightboxEmoji = document.getElementById('lightboxEmoji');
+            const lightboxImage = document.getElementById('lightboxImage');
+
+            if (content.startsWith('images/')) {
+                lightboxEmoji.style.display = 'none';
+                lightboxImage.style.display = 'block';
+                lightboxImage.src = content;
+            } else {
+                lightboxEmoji.style.display = 'block';
+                lightboxImage.style.display = 'none';
+                lightboxEmoji.textContent = content;
+            }
             document.getElementById('lightboxCaption').textContent = caption;
             document.getElementById('lightbox').classList.add('active');
         }
