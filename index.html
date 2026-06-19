@@ -139,9 +139,40 @@
         }
 
         .days-together {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-top: 20px;
             opacity: 0.95;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .countdown-display {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .countdown-unit {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .countdown-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            margin-top: 3px;
         }
 
         .next-bday {
@@ -1034,7 +1065,28 @@
             <h1>🎂 Happy Birthday Asma! ❤️</h1>
             <div class="countdown" id="countdown">Today is your special day! 🎉</div>
             <div class="days-together">
-                <span id="daysTogether">Celebrating you today</span>
+                <div id="daysTogether">💑 আমরা একসাথে...</div>
+                <div class="countdown-display">
+                    <div class="countdown-unit">
+                        <span class="countdown-value" id="totalDays">0</span>
+                        <span class="countdown-label">দিন</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <span class="countdown-value" id="elapsedHours">00</span>
+                        <span class="countdown-label">ঘণ্টা</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <span class="countdown-value" id="elapsedMinutes">00</span>
+                        <span class="countdown-label">মিনিট</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <span class="countdown-value" id="elapsedSeconds">00</span>
+                        <span class="countdown-label">সেকেন্ড</span>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; font-size: 1rem; opacity: 0.9;">
+                    ❤️ প্রতিটি মুহূর্ত গুনছি একসাথে ❤️
+                </div>
             </div>
             <div class="next-bday">
                 <span id="nextBday"></span>
@@ -1475,10 +1527,24 @@
 
         /* ============ COUNTDOWN / DAYS ============ */
         function calculateDaysTogether() {
-            const startDate = new Date('2025-06-23'); // বিয়ের তারিখ - শুরু আসল ভালোবাসার
-            const today = new Date();
-            const diffDays = Math.ceil(Math.abs(today - startDate) / (1000 * 60 * 60 * 24));
-            document.getElementById('daysTogether').textContent = `💑 আমরা একসাথে ${diffDays} টি সুন্দর দিন পার করেছি ❤️`;
+            function updateElapsedTime() {
+                const startDate = new Date('2025-06-23'); // বিয়ের তারিখ - শুরু আসল ভালোবাসার
+                const now = new Date();
+                const elapsed = now - startDate;
+
+                const totalDays = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+
+                document.getElementById('totalDays').textContent = totalDays;
+                document.getElementById('elapsedHours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('elapsedMinutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('elapsedSeconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateElapsedTime();
+            setInterval(updateElapsedTime, 1000);
         }
 
         function calculateNextBirthday() {
