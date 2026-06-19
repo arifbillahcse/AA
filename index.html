@@ -192,6 +192,220 @@
         .friends-bg { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
         .lovemeter-bg { background: linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%); }
         .open-when-bg { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .mystery-bg { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+
+        /* ============ MYSTERY GIFT SECTION ============ */
+        .mystery-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .countdown-timer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .mystery-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .countdown-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .countdown-item {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.3);
+        }
+
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+
+        .guess-game {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .guess-card h3 {
+            color: #f5576c;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .guess-hint {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .guess-form {
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #f5576c;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #f093fb;
+            box-shadow: 0 0 15px rgba(245, 87, 108, 0.2);
+        }
+
+        .guess-submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.3);
+        }
+
+        .guess-submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(245, 87, 108, 0.4);
+        }
+
+        .guess-submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .guesses-history {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 4px solid #f5576c;
+        }
+
+        .guesses-history h4 {
+            color: #f5576c;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .guess-item {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            color: #333;
+            border-left: 3px solid #f093fb;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .mystery-hints {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .mystery-hints h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .hint-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hint-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .hint-item p {
+            margin: 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .mystery-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .countdown-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .countdown-value { font-size: 1.8rem; }
+            .guess-card h3 { font-size: 1.3rem; }
+        }
 
         /* ============ PHOTO GALLERY ============ */
         .photo-gallery {
@@ -1164,6 +1378,95 @@
         </div>
     </section>
 
+    <!-- ============ MYSTERY GIFT SECTION ============ -->
+    <section class="section mystery-bg">
+        <div class="section-inner">
+            <h2 class="section-title">🎁✨ একটি রহস্যময় উপহার আসছে... ✨🎁</h2>
+            <p style="text-align: center; color: white; font-size: 1.15rem; margin-bottom: 40px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto;">
+                আমি তোমার জন্য কিছু অত্যন্ত বিশেষ এবং মূল্যবান কিছু পরিকল্পনা করেছি। এটি শুধু একটি উপহার নয়, এটি আমার ভালোবাসার প্রতীক। 💎✨
+            </p>
+
+            <div class="mystery-container">
+                <!-- Countdown Timer -->
+                <div class="countdown-timer">
+                    <div class="mystery-icon">🎁</div>
+                    <h3 style="color: white; margin-bottom: 20px;">প্রকাশের জন্য বাকি সময়</h3>
+                    <div class="countdown-box">
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="days">4</div>
+                            <div class="countdown-label">দিন</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="hours">00</div>
+                            <div class="countdown-label">ঘণ্টা</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="minutes">00</div>
+                            <div class="countdown-label">মিনিট</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="seconds">00</div>
+                            <div class="countdown-label">সেকেন্ড</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guess Game -->
+                <div class="guess-game">
+                    <div class="guess-card">
+                        <h3>🔮 অনুমান করো এটা কী হতে পারে? 🔮</h3>
+                        <p class="guess-hint">
+                            এটি অত্যন্ত মূল্যবান, অত্যন্ত বিশেষ, এবং এটি সারাজীবনের জন্য।
+                            এটি শুধু একটি জিনিস নয় - এটি একটি প্রতিশ্রুতি, একটি স্বপ্ন, এবং আমার ভালোবাসা। 💎✨
+                        </p>
+
+                        <form onsubmit="submitGuess(event)" class="guess-form">
+                            <div class="form-group">
+                                <label for="guessInput">তুমি মনে করো এটা কী? 🤔</label>
+                                <input
+                                    type="text"
+                                    id="guessInput"
+                                    placeholder="তোমার অনুমান লেখো... 💭"
+                                    required
+                                    maxlength="100"
+                                >
+                            </div>
+                            <button type="submit" class="guess-submit-btn">আমার অনুমান জমা দাও ✨</button>
+                        </form>
+
+                        <!-- Submitted Guesses -->
+                        <div id="guessesHistory" class="guesses-history">
+                            <h4>তোমার আগের অনুমানগুলো:</h4>
+                            <div id="guessesContainer" style="display: none;">
+                                <!-- Guesses will appear here -->
+                            </div>
+                            <p id="noGuessesMsg" style="color: #999; text-align: center; margin-top: 15px;">
+                                এখনো কোনো অনুমান নেই - প্রথমটা দাও! 😊
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hint Box -->
+                    <div class="mystery-hints">
+                        <h4>💡 কিছু ইঙ্গিত:</h4>
+                        <div class="hint-item">
+                            <span class="hint-number">১</span>
+                            <p>এটি এমন কিছু যা প্রতিটি মহিলা চায় কিন্তু সবাই পায় না। এটি চিরন্তন এবং অমূল্য। 💎</p>
+                        </div>
+                        <div class="hint-item">
+                            <span class="hint-number">২</span>
+                            <p>এটি উজ্জ্বল, সুন্দর, এবং আমাদের ভবিষ্যতের প্রতীক। এটি তোমার সৌন্দর্য বাড়াবে কিন্তু তোমার প্রকৃত সৌন্দর্য তো অন্য কিছু। ✨</p>
+                        </div>
+                        <div class="hint-item">
+                            <span class="hint-number">৩</span>
+                            <p>এটি আমাদের ভালোবাসার একটি মূর্ত প্রতীক। আমি এটি একটি বিশেষ জায়গা থেকে নির্বাচন করেছি, শুধুমাত্র তোমার জন্য। 💍</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ============ FINAL SECTION ============ -->
     <section class="final-section">
         <button class="final-btn" onclick="revealFinalMessage()">🎁 Claim Your Birthday Surprise 🎁</button>
@@ -1221,6 +1524,8 @@
             loadBucketList();
             updateVisitCount();
             animateLoveMeter();
+            startMysteryCountdown();
+            loadGuesses();
         });
 
         /* ============ FLOATING HEARTS ============ */
@@ -1414,6 +1719,88 @@
                 setTimeout(createConfetti, 300);
                 setTimeout(createConfetti, 600);
             }
+        }
+
+        /* ============ MYSTERY GIFT COUNTDOWN ============ */
+        function startMysteryCountdown() {
+            function updateCountdown() {
+                // 4 days from now
+                const mysteryDate = new Date();
+                mysteryDate.setDate(mysteryDate.getDate() + 4);
+
+                const now = new Date();
+                const distance = mysteryDate - now;
+
+                if (distance <= 0) {
+                    document.getElementById('days').textContent = '0';
+                    document.getElementById('hours').textContent = '0';
+                    document.getElementById('minutes').textContent = '0';
+                    document.getElementById('seconds').textContent = '0';
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        /* ============ GUESS GAME ============ */
+        function submitGuess(event) {
+            event.preventDefault();
+            const guessInput = document.getElementById('guessInput');
+            const guess = guessInput.value.trim();
+
+            if (!guess) return;
+
+            let guesses = JSON.parse(localStorage.getItem('mysteryGuesses') || '[]');
+            guesses.push({
+                text: guess,
+                time: new Date().toLocaleString('bn-BD')
+            });
+            localStorage.setItem('mysteryGuesses', JSON.stringify(guesses));
+
+            guessInput.value = '';
+            loadGuesses();
+            createConfetti();
+
+            // Show success message
+            alert('✨ তোমার অনুমান জমা হয়েছে! আমি অপেক্ষা করছি দেখব তুমি সঠিক অনুমান করেছো কিনা! 💎');
+        }
+
+        function loadGuesses() {
+            const guesses = JSON.parse(localStorage.getItem('mysteryGuesses') || '[]');
+            const container = document.getElementById('guessesContainer');
+            const noMsg = document.getElementById('noGuessesMsg');
+
+            if (guesses.length === 0) {
+                container.style.display = 'none';
+                noMsg.style.display = 'block';
+                return;
+            }
+
+            container.style.display = 'block';
+            noMsg.style.display = 'none';
+            container.innerHTML = '';
+
+            guesses.forEach((guess, index) => {
+                const guessEl = document.createElement('div');
+                guessEl.className = 'guess-item';
+                guessEl.innerHTML = `
+                    <strong>#${index + 1}:</strong> ${guess.text}
+                    <div style="font-size: 0.85rem; color: #999; margin-top: 5px;">📅 ${guess.time}</div>
+                `;
+                container.appendChild(guessEl);
+            });
         }
 
         /* ============ CONFETTI ============ */
