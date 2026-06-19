@@ -1723,10 +1723,8 @@
                 const distance = mysteryDate - now;
 
                 if (distance <= 0) {
-                    document.getElementById('days').textContent = '0';
-                    document.getElementById('hours').textContent = '0';
-                    document.getElementById('minutes').textContent = '0';
-                    document.getElementById('seconds').textContent = '0';
+                    // Countdown finished - Reveal the gift!
+                    revealMysteryGift();
                     return;
                 }
 
@@ -1743,6 +1741,38 @@
 
             updateCountdown();
             setInterval(updateCountdown, 1000);
+        }
+
+        function revealMysteryGift() {
+            const mysterySection = document.querySelector('.mystery-bg');
+            if (!mysterySection) return;
+
+            mysterySection.innerHTML = `
+                <div class="section-inner">
+                    <div style="text-align: center; padding: 80px 40px;">
+                        <div style="font-size: 5rem; margin-bottom: 30px; animation: bounce 2s infinite;">💎</div>
+                        <h2 class="section-title" style="color: white; margin-bottom: 30px;">
+                            🎉 উপহার প্রকাশিত হয়েছে! 🎉
+                        </h2>
+                        <div style="background: rgba(255, 255, 255, 0.95); padding: 50px; border-radius: 25px; max-width: 700px; margin: 0 auto;">
+                            <h3 style="color: #f5576c; font-size: 2rem; margin-bottom: 20px;">
+                                💍 একটি সুন্দর হীরার অলংকার 💍
+                            </h3>
+                            <p style="color: #333; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                                আমার প্রিয় Asma,<br><br>
+                                এই হীরাটি আমাদের ভালোবাসার চিরন্তন প্রতীক। যেমন হীরা অমূল্য এবং দুর্লভ, তুমিও আমার কাছে তেমনি মূল্যবান এবং অনন্য।<br><br>
+                                এটি শুধু একটি উপহার নয় - এটি আমার প্রতিশ্রুতি যে আমরা চিরকাল একসাথে থাকব। আমাদের ভবিষ্যৎ উজ্জ্বল, আমাদের ছোট্ট সোনা যে আসছে, এবং আমাদের প্রেমের গল্প অসীম।br><br>
+                                তোমাকে ভালোবাসি, চিরকালের জন্য। ❤️❤️❤️
+                            </p>
+                            <div style="margin-top: 30px;">
+                                <button onclick="location.reload()" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; padding: 15px 40px; border-radius: 12px; font-size: 1.1rem; font-weight: 600; cursor: pointer;">
+                                    বাড়িতে ফিরুন 🏠
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
 
         /* ============ GUESS GAME ============ */
