@@ -1673,7 +1673,7 @@
                 </div>
             </div>
             <p style="text-align: center; color: white; font-size: 0.95rem; margin-top: 30px; opacity: 0.8;" id="auntyGiftStatus">
-                💝 নির্বাচিত উপহার: <span id="auntyGiftCount">0</span>
+                💝 একটি উপহার বেছে নাও — শুধু একটিই নেওয়া যাবে
             </p>
         </div>
     </section>
@@ -2168,8 +2168,14 @@
         }
 
         function updateAuntyGiftCount() {
-            const count = document.querySelectorAll('.aunty-gift-card.selected').length;
-            document.getElementById('auntyGiftCount').textContent = count;
+            const selected = document.querySelector('.aunty-gift-card.selected');
+            const status = document.getElementById('auntyGiftStatus');
+            if (selected) {
+                const title = selected.querySelector('.gift-title')?.textContent;
+                status.innerHTML = `✅ তুমি বেছে নিয়েছো: <strong>${title}</strong> 💝`;
+            } else {
+                status.innerHTML = '💝 একটি উপহার বেছে নাও — শুধু একটিই নেওয়া যাবে';
+            }
         }
 
         /* ============ 101 REASONS ============ */
