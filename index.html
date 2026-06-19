@@ -429,6 +429,243 @@
             font-weight: 700;
         }
 
+        /* ============ NEW MYSTERY SECTION STYLES ============ */
+        .mystery-wrapper {
+            text-align: center;
+        }
+
+        .mystery-header {
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .gift-animation {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        .mystery-main-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .mystery-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+        }
+
+        .countdown-card {
+            background: rgba(255,255,255,0.95);
+            padding: 50px 30px;
+            border-radius: 25px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .countdown-timer-new {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .timer-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 70px;
+        }
+
+        .timer-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f5576c;
+            line-height: 1;
+        }
+
+        .timer-label {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .timer-divider {
+            font-size: 2rem;
+            color: #f5576c;
+            font-weight: 300;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            opacity: 0.5;
+        }
+
+        .timer-text {
+            color: #666;
+            margin: 0;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .guess-section-new {
+            background: rgba(255,255,255,0.95);
+            padding: 50px;
+            border-radius: 25px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .guess-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .hint-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .guess-form-new {
+            margin-bottom: 30px;
+        }
+
+        .input-wrapper {
+            display: flex;
+            gap: 12px;
+        }
+
+        .guess-input-new {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #f5576c;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .guess-input-new:focus {
+            outline: none;
+            border-color: #f093fb;
+            box-shadow: 0 0 15px rgba(245, 87, 108, 0.2);
+        }
+
+        .guess-btn-new {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+        }
+
+        .guess-btn-new:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        .guesses-display {
+            margin-top: 30px;
+        }
+
+        .guesses-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .guess-item {
+            background: #f9f9f9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            color: #333;
+            border-left: 3px solid #f093fb;
+            text-align: left;
+            animation: slideIn 0.3s ease;
+        }
+
+        .no-guesses {
+            color: #999;
+            text-align: center;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .hints-section-new {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hints-section-new h4 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            margin-top: 0;
+        }
+
+        .hints-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .hint-card {
+            background: rgba(255,255,255,0.95);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .hint-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .hint-card p {
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .mystery-main-title { font-size: 1.8rem; }
+            .countdown-card { padding: 40px 20px; }
+            .guess-section-new { padding: 30px 20px; }
+            .hints-section-new { padding: 30px 20px; }
+            .input-wrapper { flex-direction: column; }
+            .timer-item { min-width: 60px; }
+            .timer-number { font-size: 1.8rem; }
+        }
+
         @media (max-width: 768px) {
             .mystery-container {
                 grid-template-columns: 1fr;
@@ -1376,91 +1613,76 @@
     <!-- ============ MYSTERY GIFT SECTION ============ -->
     <section class="section mystery-bg">
         <div class="section-inner">
-            <h2 class="section-title">🎁✨ একটি রহস্যময় উপহার আসছে... ✨🎁</h2>
-            <p style="text-align: center; color: white; font-size: 1.15rem; margin-bottom: 40px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto;">
-                আমি তোমার জন্য কিছু অত্যন্ত বিশেষ এবং মূল্যবান কিছু পরিকল্পনা করেছি। এটি শুধু একটি উপহার নয়, এটি আমার ভালোবাসার প্রতীক। 💎✨
-            </p>
+            <div class="mystery-wrapper">
+                <div class="mystery-header">
+                    <div class="gift-animation">🎁</div>
+                    <h2 class="mystery-main-title">একটি বিশেষ উপহার অপেক্ষা করছে...</h2>
+                    <p class="mystery-subtitle">আমার হৃদয় থেকে, তোমার জন্য ❤️✨</p>
+                </div>
 
-            <div class="mystery-container">
-                <!-- Countdown Timer -->
-                <div class="countdown-timer">
-                    <div class="mystery-icon">🎁</div>
-                    <h3 style="color: white; margin-bottom: 20px;">প্রকাশের জন্য বাকি সময়</h3>
-                    <div class="countdown-box">
-                        <div class="countdown-item">
-                            <div class="countdown-value" id="days">4</div>
-                            <div class="countdown-label">দিন</div>
+                <div class="countdown-card">
+                    <div class="countdown-timer-new">
+                        <div class="timer-item">
+                            <span class="timer-number" id="days">4</span>
+                            <span class="timer-label">দিন</span>
                         </div>
-                        <div class="countdown-item">
-                            <div class="countdown-value" id="hours">00</div>
-                            <div class="countdown-label">ঘণ্টা</div>
+                        <div class="timer-divider">:</div>
+                        <div class="timer-item">
+                            <span class="timer-number" id="hours">00</span>
+                            <span class="timer-label">ঘণ্টা</span>
                         </div>
-                        <div class="countdown-item">
-                            <div class="countdown-value" id="minutes">00</div>
-                            <div class="countdown-label">মিনিট</div>
+                        <div class="timer-divider">:</div>
+                        <div class="timer-item">
+                            <span class="timer-number" id="minutes">00</span>
+                            <span class="timer-label">মিনিট</span>
                         </div>
-                        <div class="countdown-item">
-                            <div class="countdown-value" id="seconds">00</div>
-                            <div class="countdown-label">সেকেন্ড</div>
+                        <div class="timer-divider">:</div>
+                        <div class="timer-item">
+                            <span class="timer-number" id="seconds">00</span>
+                            <span class="timer-label">সেকেন্ড</span>
                         </div>
+                    </div>
+                    <p class="timer-text">এতক্ষণ অপেক্ষা করো, প্রিয়... ⏳💝</p>
+                </div>
+
+                <div class="guess-section-new">
+                    <h3 class="guess-title">🔮 অনুমান করো এটা কী? 🔮</h3>
+                    <div class="hint-box">
+                        <p>এটি আমার ভালোবাসার সবচেয়ে সুন্দর প্রকাশ।<br>চিরন্তন, অমূল্য, এবং শুধুমাত্র তোমার জন্য। 💎</p>
+                    </div>
+                    <form onsubmit="submitGuess(event)" class="guess-form-new">
+                        <div class="input-wrapper">
+                            <input type="text" id="guessInput" placeholder="তোমার অনুমান লেখো... 💭" required maxlength="100" class="guess-input-new">
+                            <button type="submit" class="guess-btn-new">জমা দাও ✨</button>
+                        </div>
+                    </form>
+                    <div class="guesses-display">
+                        <div id="guessesContainer" class="guesses-list" style="display: none;"></div>
+                        <p id="noGuessesMsg" class="no-guesses">এখনো কোনো অনুমান নেই! 😊</p>
                     </div>
                 </div>
 
-                <!-- Guess Game -->
-                <div class="guess-game">
-                    <div class="guess-card">
-                        <h3>🔮 অনুমান করো এটা কী হতে পারে? 🔮</h3>
-                        <p class="guess-hint">
-                            এটি অত্যন্ত মূল্যবান, অত্যন্ত বিশেষ, এবং এটি সারাজীবনের জন্য।
-                            এটি শুধু একটি জিনিস নয় - এটি একটি প্রতিশ্রুতি, একটি স্বপ্ন, এবং আমার ভালোবাসা। 💎✨
-                        </p>
-
-                        <form onsubmit="submitGuess(event)" class="guess-form">
-                            <div class="form-group">
-                                <label for="guessInput">তুমি মনে করো এটা কী? 🤔</label>
-                                <input
-                                    type="text"
-                                    id="guessInput"
-                                    placeholder="তোমার অনুমান লেখো... 💭"
-                                    required
-                                    maxlength="100"
-                                >
-                            </div>
-                            <button type="submit" class="guess-submit-btn">আমার অনুমান জমা দাও ✨</button>
-                        </form>
-
-                        <!-- Submitted Guesses -->
-                        <div id="guessesHistory" class="guesses-history">
-                            <h4>তোমার আগের অনুমানগুলো:</h4>
-                            <div id="guessesContainer" style="display: none;">
-                                <!-- Guesses will appear here -->
-                            </div>
-                            <p id="noGuessesMsg" style="color: #999; text-align: center; margin-top: 15px;">
-                                এখনো কোনো অনুমান নেই - প্রথমটা দাও! 😊
-                            </p>
+                <div class="hints-section-new">
+                    <h4>💡 তিনটি ইঙ্গিত:</h4>
+                    <div class="hints-grid">
+                        <div class="hint-card">
+                            <div class="hint-badge">1</div>
+                            <p>চিরন্তন সৌন্দর্য যা সময়ের সাথে ঝলমলে হয়। 💎</p>
                         </div>
-                    </div>
-
-                    <!-- Hint Box -->
-                    <div class="mystery-hints">
-                        <h4>💡 কিছু ইঙ্গিত:</h4>
-                        <div class="hint-item">
-                            <span class="hint-number">১</span>
-                            <p>এটি এমন কিছু যা প্রতিটি মহিলা চায় কিন্তু সবাই পায় না। এটি চিরন্তন এবং অমূল্য। 💎</p>
+                        <div class="hint-card">
+                            <div class="hint-badge">2</div>
+                            <p>আমাদের ভবিষ্যতের প্রতীক এবং আমাদের প্রতিশ্রুতি। ✨</p>
                         </div>
-                        <div class="hint-item">
-                            <span class="hint-number">২</span>
-                            <p>এটি উজ্জ্বল, সুন্দর, এবং আমাদের ভবিষ্যতের প্রতীক। এটি তোমার সৌন্দর্য বাড়াবে কিন্তু তোমার প্রকৃত সৌন্দর্য তো অন্য কিছু। ✨</p>
-                        </div>
-                        <div class="hint-item">
-                            <span class="hint-number">৩</span>
-                            <p>এটি আমাদের ভালোবাসার একটি মূর্ত প্রতীক। আমি এটি একটি বিশেষ জায়গা থেকে নির্বাচন করেছি, শুধুমাত্র তোমার জন্য। 💍</p>
+                        <div class="hint-card">
+                            <div class="hint-badge">3</div>
+                            <p>তোমার সৌন্দর্যকে আরও উজ্জ্বল করবে, কিন্তু তুমি ইতিমধ্যে নিখুঁত। 💍</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- ============ FINAL SECTION ============ -->
     <section class="final-section">
