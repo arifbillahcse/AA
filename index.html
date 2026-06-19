@@ -967,45 +967,63 @@
     <!-- ============ REDEEM CARDS SECTION ============ -->
     <section class="section cards-bg">
         <div class="section-inner">
-            <h2 class="section-title">🎁 Redeem Your Vouchers 🎁</h2>
+            <h2 class="section-title">🎁 Choose Your 3 Gifts 🎁</h2>
+            <p style="text-align: center; color: white; font-size: 1.1rem; margin-bottom: 40px; opacity: 0.95;">
+                ⭐ তুমি শুধুমাত্র 3টি উপহার বেছে নিতে পারো। সাবধানে বেছে নাও, প্রিয়!
+            </p>
             <div class="cards-container">
-                <div class="redeem-card" data-id="bike-date">
+                <div class="redeem-card" data-id="gold-jewelry">
+                    <div class="card-emoji">✨</div>
+                    <div class="card-title">Gold Jewelry</div>
+                    <div class="card-description">একটি সুন্দর গোল্ড জুয়েলারি - তোমার সৌন্দর্যকে আরও উজ্জ্বল করবে।</div>
+                    <button class="redeem-btn" onclick="redeemCard(this)">Choose This 💝</button>
+                </div>
+                <div class="redeem-card" data-id="bike-travel">
                     <div class="card-emoji">🏍️</div>
-                    <div class="card-title">Bike Date Voucher</div>
-                    <div class="card-description">একটি সুন্দর বাইক রাইড - যেখানেই তুমি যেতে চাও, আমরা যাব।</div>
-                    <button class="redeem-btn" onclick="redeemCard(this)">Redeem Now 🎉</button>
+                    <div class="card-title">Bike Travel</div>
+                    <div class="card-description">একটি সুন্দর বাইক ট্রিপ - যেখানেই তুমি চাও, আমরা যাব একসাথে।</div>
+                    <button class="redeem-btn" onclick="redeemCard(this)">Choose This 💝</button>
                 </div>
-                <div class="redeem-card" data-id="dinner-date">
-                    <div class="card-emoji">🍽️</div>
-                    <div class="card-title">Special Dinner Voucher</div>
-                    <div class="card-description">তোমার পছন্দের রেস্তোরাঁয় ডিনার - শুধু আমাদের দুজনের জন্য।</div>
-                    <button class="redeem-btn" onclick="redeemCard(this)">Redeem Now 🎉</button>
+                <div class="redeem-card" data-id="cox-bazar-travel">
+                    <div class="card-emoji">🏖️</div>
+                    <div class="card-title">Cox Bazar Travel</div>
+                    <div class="card-description">কক্সবাজারে একটি মজার ছুটি - সমুদ্র, বালি এবং আমরা দুজনে।</div>
+                    <button class="redeem-btn" onclick="redeemCard(this)">Choose This 💝</button>
                 </div>
-                <div class="redeem-card" data-id="movie-night">
-                    <div class="card-emoji">🎬</div>
-                    <div class="card-title">Movie Night Voucher</div>
-                    <div class="card-description">যেকোনো সিনেমা - পপকর্ন এবং স্নাগলিং সহ! 🍿</div>
-                    <button class="redeem-btn" onclick="redeemCard(this)">Redeem Now 🎉</button>
+                <div class="redeem-card" data-id="resort-night">
+                    <div class="card-emoji">🏨</div>
+                    <div class="card-title">Resort One Night</div>
+                    <div class="card-description">একটি রোমান্টিক রিসোর্টে এক রাত - স্মৃতি তৈরি করার জন্য পারফেক্ট।</div>
+                    <button class="redeem-btn" onclick="redeemCard(this)">Choose This 💝</button>
                 </div>
-                <div class="redeem-card" data-id="coffee-date">
-                    <div class="card-emoji">☕</div>
-                    <div class="card-title">Coffee Date Voucher</div>
-                    <div class="card-description">আমাদের প্রিয় ক্যাফেতে ঘণ্টার পর ঘণ্টা কথা বলা।</div>
-                    <button class="redeem-btn" onclick="redeemCard(this)">Redeem Now 🎉</button>
+                <div class="redeem-card" data-id="diamond">
+                    <div class="card-emoji">💎</div>
+                    <div class="card-title">Diamond</div>
+                    <div class="card-description">একটি উজ্জ্বল হীরা - তোমার মূল্যের প্রতীক, চিরকালের জন্য।</div>
+                    <button class="redeem-btn" onclick="redeemCard(this)">Choose This 💝</button>
                 </div>
-                <div class="redeem-card" data-id="queen-day">
-                    <div class="card-emoji">👑</div>
-                    <div class="card-title">Queen For A Day Voucher</div>
-                    <div class="card-description">তোমার সব ইচ্ছা আমার কমান্ড - তুমি রানী, আমি তোমার সেবক।</div>
-                    <button class="redeem-btn" onclick="redeemCard(this)">Redeem Now 🎉</button>
+                <div class="redeem-card" data-id="dress">
+                    <div class="card-emoji">👗</div>
+                    <div class="card-title">Beautiful Dress</div>
+                    <div class="card-description">একটি সুন্দর পোশাক - তোমাকে রাজকীর মতো দেখাবে।</div>
+                    <button class="redeem-btn" onclick="redeemCard(this)">Choose This 💝</button>
                 </div>
-                <div class="redeem-card" data-id="breakfast-bed">
-                    <div class="card-emoji">🛏️</div>
-                    <div class="card-title">Breakfast in Bed Voucher</div>
-                    <div class="card-description">সকালে বিছানায় প্রিয় খাবার - তোমার জন্য বিশেষভাবে প্রস্তুত।</div>
-                    <button class="redeem-btn" onclick="redeemCard(this)">Redeem Now 🎉</button>
+                <div class="redeem-card" data-id="baby-dress">
+                    <div class="card-emoji">👶</div>
+                    <div class="card-title">Baby Dress</div>
+                    <div class="card-description">আমাদের ছোট্ট সোনার জন্য সুন্দর পোশাক - ভালোবাসা দিয়ে বেছে নেওয়া।</div>
+                    <button class="redeem-btn" onclick="redeemCard(this)">Choose This 💝</button>
+                </div>
+                <div class="redeem-card" data-id="house-decoration">
+                    <div class="card-emoji">🏠</div>
+                    <div class="card-title">House Decoration</div>
+                    <div class="card-description">ঘর সাজানোর জন্য সবকিছু - আমাদের নীড়কে আরও সুন্দর করব একসাথে।</div>
+                    <button class="redeem-btn" onclick="redeemCard(this)">Choose This 💝</button>
                 </div>
             </div>
+            <p style="text-align: center; color: white; font-size: 0.95rem; margin-top: 30px; opacity: 0.8;" id="redeemStatus">
+                💝 তুমি <span id="redeemCount">0</span>/3 উপহার বেছে নিয়েছো
+            </p>
         </div>
     </section>
 
@@ -1264,13 +1282,25 @@
         function redeemCard(button) {
             const card = button.closest('.redeem-card');
             const cardId = card.getAttribute('data-id');
-            if (card.classList.contains('redeemed')) return;
-            card.classList.add('redeemed');
-            button.textContent = 'Redeemed ✨';
-            localStorage.setItem(`card_${cardId}`, 'redeemed');
-            createConfetti();
-            card.classList.add('heart-beat');
-            setTimeout(() => card.classList.remove('heart-beat'), 600);
+
+            if (card.classList.contains('redeemed')) {
+                card.classList.remove('redeemed');
+                button.textContent = 'Choose This 💝';
+                localStorage.removeItem(`card_${cardId}`);
+            } else {
+                const redeemCount = document.querySelectorAll('.redeem-card.redeemed').length;
+                if (redeemCount >= 3) {
+                    alert('⚠️ তুমি ইতিমধ্যে 3টি উপহার বেছে নিয়েছো! একটা বাতিল করো তারপর নতুনটা বেছে নাও।');
+                    return;
+                }
+                card.classList.add('redeemed');
+                button.textContent = 'Selected ✅';
+                localStorage.setItem(`card_${cardId}`, 'redeemed');
+                createConfetti();
+                card.classList.add('heart-beat');
+                setTimeout(() => card.classList.remove('heart-beat'), 600);
+            }
+            updateRedeemCount();
         }
 
         function loadRedeemedCards() {
@@ -1278,9 +1308,15 @@
                 const cardId = card.getAttribute('data-id');
                 if (localStorage.getItem(`card_${cardId}`) === 'redeemed') {
                     card.classList.add('redeemed');
-                    card.querySelector('.redeem-btn').textContent = 'Redeemed ✨';
+                    card.querySelector('.redeem-btn').textContent = 'Selected ✅';
                 }
             });
+            updateRedeemCount();
+        }
+
+        function updateRedeemCount() {
+            const count = document.querySelectorAll('.redeem-card.redeemed').length;
+            document.getElementById('redeemCount').textContent = count;
         }
 
         /* ============ 101 REASONS ============ */
