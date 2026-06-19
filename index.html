@@ -1408,6 +1408,8 @@
             .gift-description { font-size: 0.85rem; }
         }
     </style>
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
 </head>
 <body>
     <!-- Floating Hearts Background -->
@@ -1752,27 +1754,27 @@
         <div class="section-inner">
             <h2 class="section-title">💝 Open When... 💝</h2>
             <div class="open-when-container">
-                <div class="open-when-card" onclick="this.classList.toggle('opened')">
+                <div class="open-when-card" onclick="openWhenCard(this)">
                     <div class="open-when-title">📖 Open When You're Sad</div>
                     <div class="open-when-message">আমি সবসময় তোমার পাশে আছি। তোমার অশ্রু আমার অশ্রু। চলো একসাথে এটা সামলাই। ❤️</div>
                 </div>
-                <div class="open-when-card" onclick="this.classList.toggle('opened')">
+                <div class="open-when-card" onclick="openWhenCard(this)">
                     <div class="open-when-title">😢 Open When You Miss Me</div>
                     <div class="open-when-message">আমিও তোমাকে মিস করি। ভালোবাসা দূরত্ব জানে না। আমরা সবসময় কাছাকাছি থাকব। 💕</div>
                 </div>
-                <div class="open-when-card" onclick="this.classList.toggle('opened')">
+                <div class="open-when-card" onclick="openWhenCard(this)">
                     <div class="open-when-title">💪 Open When Unmotivated</div>
                     <div class="open-when-message">তুমি যা চাও তা পারবে। আমি তোমার মধ্যে যা সম্ভাবনা দেখি তা অসীম। বিশ্বাস করো নিজের উপর। ⭐</div>
                 </div>
-                <div class="open-when-card" onclick="this.classList.toggle('opened')">
+                <div class="open-when-card" onclick="openWhenCard(this)">
                     <div class="open-when-title">😊 Open When You Want To Smile</div>
                     <div class="open-when-message">তোমার হাসি আমার প্রিয় জিনিস। চলো কিছু মজার করি! এই মুহূর্তটা উদযাপন করি। 🎉</div>
                 </div>
-                <div class="open-when-card" onclick="this.classList.toggle('opened')">
+                <div class="open-when-card" onclick="openWhenCard(this)">
                     <div class="open-when-title">🤗 Open When You Need A Hug</div>
                     <div class="open-when-message">এখানে একটি ভার্চুয়াল হাগ! কিন্তু যখন আমরা দেখা করি আমি তোমাকে সবচেয়ে বড় আলিঙ্গন দেব। 🤗</div>
                 </div>
-                <div class="open-when-card" onclick="this.classList.toggle('opened')">
+                <div class="open-when-card" onclick="openWhenCard(this)">
                     <div class="open-when-title">🌟 Open When You're Grateful</div>
                     <div class="open-when-message">আমি তোমার জন্য কৃতজ্ঞ। প্রতিটি দিন তুমি আমার জীবনকে আরও সুন্দর করে তোলো। ধন্যবাদ। 🙏❤️</div>
                 </div>
@@ -1903,8 +1905,102 @@
         ];
         let currentReason = 0;
 
+        /* ============ EMAILJS + GOOGLE SHEETS INTEGRATION ============ */
+        // Configuration
+        const EMAIL_CONFIG = {
+            emailJSServiceID: 'service_asma_birthday', // Replace with your EmailJS Service ID
+            emailJSTemplateID: 'template_asma_updates', // Replace with your EmailJS Template ID
+            emailJSPublicKey: 'YOUR_EMAILJS_PUBLIC_KEY', // Replace with your EmailJS Public Key
+            recipientEmail: 'csearif2002@gmail.com' // Email to receive notifications
+        };
+
+        const GOOGLE_SHEETS_CONFIG = {
+            formURL: 'https://docs.google.com/forms/u/0/d/e/YOUR_FORM_ID/formResponse', // Replace with your Google Form ID
+            entryMappings: {
+                timestamp: '1234567890', // Replace with actual entry ID
+                activity: '1234567891',
+                details: '1234567892',
+                userInfo: '1234567893'
+            }
+        };
+
+        // Initialize EmailJS
+        function initEmailJS() {
+            try {
+                emailjs.init(EMAIL_CONFIG.emailJSPublicKey);
+                console.log('✅ EmailJS initialized');
+            } catch (error) {
+                console.log('⚠️ EmailJS initialization pending - add public key in config');
+            }
+        }
+
+        // Send email notification
+        function sendEmailNotification(activity, details) {
+            if (!EMAIL_CONFIG.emailJSPublicKey || EMAIL_CONFIG.emailJSPublicKey === 'YOUR_EMAILJS_PUBLIC_KEY') {
+                console.log('📧 Activity logged (Email notifications not configured):', activity, details);
+                return;
+            }
+
+            const templateParams = {
+                to_email: EMAIL_CONFIG.recipientEmail,
+                activity_type: activity,
+                activity_details: JSON.stringify(details, null, 2),
+                timestamp: new Date().toLocaleString('bn-BD'),
+                website_url: window.location.href
+            };
+
+            emailjs.send(EMAIL_CONFIG.emailJSServiceID, EMAIL_CONFIG.emailJSTemplateID, templateParams)
+                .then(response => {
+                    console.log('✅ Email sent successfully:', response);
+                })
+                .catch(error => {
+                    console.log('⚠️ Email sending failed (check configuration):', error);
+                });
+        }
+
+        // Log to Google Sheets
+        function logToGoogleSheets(activity, details) {
+            if (!GOOGLE_SHEETS_CONFIG.formURL || GOOGLE_SHEETS_CONFIG.formURL.includes('YOUR_FORM_ID')) {
+                console.log('📊 Activity logged (Google Sheets not configured):', activity);
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append(`entry.${GOOGLE_SHEETS_CONFIG.entryMappings.timestamp}`, new Date().toLocaleString());
+            formData.append(`entry.${GOOGLE_SHEETS_CONFIG.entryMappings.activity}`, activity);
+            formData.append(`entry.${GOOGLE_SHEETS_CONFIG.entryMappings.details}`, JSON.stringify(details));
+            formData.append(`entry.${GOOGLE_SHEETS_CONFIG.entryMappings.userInfo}`, navigator.userAgent);
+
+            fetch(GOOGLE_SHEETS_CONFIG.formURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => console.log('✅ Data logged to Google Sheets:', activity))
+            .catch(error => console.log('⚠️ Google Sheets logging failed:', error));
+        }
+
+        // Track activity
+        function trackActivity(activity, details = {}) {
+            const activityLog = {
+                activity,
+                timestamp: new Date().toISOString(),
+                ...details
+            };
+
+            // Send email notification
+            sendEmailNotification(activity, activityLog);
+
+            // Log to Google Sheets
+            logToGoogleSheets(activity, activityLog);
+
+            // Log to browser console
+            console.log('📝 Activity tracked:', activityLog);
+        }
+
         /* ============ INITIALIZE ============ */
         document.addEventListener('DOMContentLoaded', () => {
+            initEmailJS();
             createFloatingHearts();
             calculateDaysTogether();
             calculateNextBirthday();
@@ -1915,6 +2011,7 @@
             animateLoveMeter();
             startMysteryCountdown();
             loadGuesses();
+            trackActivity('page_visit', { source: document.referrer || 'direct' });
         });
 
         /* ============ FLOATING HEARTS ============ */
@@ -1990,11 +2087,13 @@
         function redeemCard(button) {
             const card = button.closest('.redeem-card');
             const cardId = card.getAttribute('data-id');
+            const cardTitle = card.querySelector('.card-title')?.textContent;
 
             if (card.classList.contains('redeemed')) {
                 card.classList.remove('redeemed');
                 button.textContent = 'Choose This 💝';
                 localStorage.removeItem(`card_${cardId}`);
+                trackActivity('gift_deselected', { giftId: cardId, giftTitle: cardTitle });
             } else {
                 const redeemCount = document.querySelectorAll('.redeem-card.redeemed').length;
                 if (redeemCount >= 3) {
@@ -2007,6 +2106,7 @@
                 createConfetti();
                 card.classList.add('heart-beat');
                 setTimeout(() => card.classList.remove('heart-beat'), 600);
+                trackActivity('gift_selected', { giftId: cardId, giftTitle: cardTitle });
             }
             updateRedeemCount();
         }
@@ -2031,11 +2131,13 @@
         function selectAuntyGift(button) {
             const card = button.closest('.aunty-gift-card');
             const cardId = card.getAttribute('data-id');
+            const giftTitle = card.querySelector('.gift-title')?.textContent;
 
             if (card.classList.contains('selected')) {
                 card.classList.remove('selected');
                 button.textContent = 'Select Gift 💝';
                 localStorage.removeItem(`aunty_gift_${cardId}`);
+                trackActivity('aunty_gift_deselected', { giftId: cardId, giftTitle });
             } else {
                 document.querySelectorAll('.aunty-gift-card.selected').forEach(c => {
                     c.classList.remove('selected');
@@ -2049,6 +2151,7 @@
                 createConfetti();
                 card.classList.add('heart-beat');
                 setTimeout(() => card.classList.remove('heart-beat'), 600);
+                trackActivity('aunty_gift_selected', { giftId: cardId, giftTitle });
             }
             updateAuntyGiftCount();
         }
@@ -2084,14 +2187,19 @@
             const card = option.closest('.quiz-card');
             if (card.dataset.answered) return;
             card.dataset.answered = 'true';
+            const question = card.querySelector('.quiz-question')?.textContent;
+            const answer = option.textContent;
+
             if (isCorrect) {
                 option.classList.add('correct');
                 createConfetti();
+                trackActivity('quiz_answer_correct', { question, answer, isCorrect: true });
             } else {
                 option.classList.add('wrong');
                 card.querySelectorAll('.quiz-option').forEach(opt => {
                     if (opt.getAttribute('onclick').includes('true')) opt.classList.add('correct');
                 });
+                trackActivity('quiz_answer_wrong', { question, answer, isCorrect: false });
             }
         }
 
@@ -2099,11 +2207,15 @@
         function toggleBucket(item) {
             item.classList.toggle('checked');
             const id = item.getAttribute('data-id');
+            const text = item.querySelector('.bucket-text')?.textContent;
+
             if (item.classList.contains('checked')) {
                 localStorage.setItem(id, 'checked');
                 createConfetti();
+                trackActivity('bucket_item_completed', { itemId: id, itemText: text });
             } else {
                 localStorage.removeItem(id);
+                trackActivity('bucket_item_unchecked', { itemId: id, itemText: text });
             }
         }
 
@@ -2240,6 +2352,18 @@
             `;
         }
 
+        /* ============ OPEN WHEN CARDS ============ */
+        function openWhenCard(card) {
+            card.classList.toggle('opened');
+            const title = card.querySelector('.open-when-title')?.textContent;
+            const message = card.querySelector('.open-when-message')?.textContent;
+            const isOpened = card.classList.contains('opened');
+
+            if (isOpened) {
+                trackActivity('open_when_card_opened', { title, message });
+            }
+        }
+
         /* ============ GUESS GAME ============ */
         function submitGuess(event) {
             event.preventDefault();
@@ -2254,6 +2378,8 @@
                 time: new Date().toLocaleString('bn-BD')
             });
             localStorage.setItem('mysteryGuesses', JSON.stringify(guesses));
+
+            trackActivity('mystery_guess_submitted', { guess, totalGuesses: guesses.length });
 
             guessInput.value = '';
             loadGuesses();
